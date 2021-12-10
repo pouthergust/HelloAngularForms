@@ -1,0 +1,21 @@
+$componentName: 'c-card';
+
+.#{$componentName} {
+  @include container($rl: 10px);
+  background-color: rgba($sec, 0.3);
+  border-radius: 8px;
+  border: 2px solid rgba($pri, 0.4);
+  cursor: pointer;
+  filter: grayscale(.3) opacity(.7);
+  transition: all .3s;
+  text-align: center;
+
+  &:hover {
+    filter: contrast(120%);
+    border-color: rgba($pri, 0.6);
+  }
+}
+
+.#{$componentName} {
+  width: 100%;
+}

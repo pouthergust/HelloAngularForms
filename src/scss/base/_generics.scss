@@ -1,0 +1,5 @@
+
+/* Utilitarios */
+.u-title { @include title(); }
+.u-subTitle { @include sub-title(); }
+.u-text { @include text(); }

@@ -1,0 +1,17 @@
+$componentName: 'selectForm';
+
+.c-#{$componentName} {
+  @include flex();
+  background-color: #fff;
+
+  &__wrapper {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas: "formControl" "Reactive" "Template";
+  }
+}
+
+.c-#{$componentName} {
+  height: 100%;
+}
+

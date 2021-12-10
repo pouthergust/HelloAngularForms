@@ -1,0 +1,27 @@
+@mixin title($size: 24px, $weight: 550, $color: var(--pri)) {
+  color: $color;
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin sub-title($size: 1rem, $weight: 500, $color: var(--txt-content)) {
+  color: $color;
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin text($size: 12px, $color: var(--txt-content)) {
+  color: $color;
+  font-size: $size;
+}
+
+@mixin container($rl: 20px, $tb: $rl) {
+  padding: $tb $rl;
+}
+
+@mixin flex($items: center, $content: center, $direction: row) {
+  align-items: $items;
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $content;
+}

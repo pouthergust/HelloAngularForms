@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Tema */
+@import 'theme/colors';
+
+/* Base */
+@import 'base/reset';
+@import 'base/mixins';
+@import 'base/generics';
+
+/* Componente */
+@import 'components/c-select-form';
+@import 'components/c-formControl';
+@import 'components/c-reactive';
+@import 'components/c-template';
+@import 'components/c-card';
+
+/* Estado */
+@import 'state/state';
+
+/* layout */
+@import 'layouts/l-main';
+@import 'layouts/l-myForm';
+@import 'layouts/responsivity';
+
+/* ---------------------------------------------------- */

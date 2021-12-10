@@ -1,0 +1,15 @@
+$tagName: 'l-main';
+
+.#{$tagName} {
+  @include flex(); /* $items, $content, $direction */
+  background: linear-gradient(140deg, rgba(252,246,255,1) 0%, rgba(128,5,195,1) 100%);
+
+  > * {
+    height: 100vh;
+  }
+}
+
+.#{$tagName} {
+  height: 100vh;
+  width: 100vw;
+}
