@@ -19,7 +19,7 @@ export class FormControlComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.formControl.value)
-    if (!this.storage.read('Form-control Works!') === null) {
+    if (this.storage.read('formsTitle') == null) {
       this.storage.create('formsTitle', 'Form-control Works!')
     }
 
