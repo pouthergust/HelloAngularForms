@@ -1,0 +1,13 @@
+$componentName: 'input';
+
+.c-#{$componentName} {
+  background-color: var(--fundinho);
+  border-radius: 3px;
+  outline-color: rgba($pri, 0.4);
+  padding: 10px;
+}
+
+.c-#{$componentName} {
+  margin-top: 10px;
+  width: 300px;
+}

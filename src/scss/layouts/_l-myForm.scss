@@ -6,6 +6,11 @@ $layoutName: 'l-myForm';
 
   .forms-selected {
     @include flex();
+
+    /* Alterar!! Colocar um placeholder de seleção */
+    .c-selectForm {
+      display: none;
+    }
   }
 }
 

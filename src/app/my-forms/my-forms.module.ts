@@ -9,6 +9,7 @@ import { FormControlComponent } from './form-control/form-control.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveComponent } from './reactive/reactive.component';
 import { TemplateComponent } from './template/template.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { TemplateComponent } from './template/template.component';
   imports: [
     CommonModule,
     MyFormsRoutingModule,
+    ReactiveFormsModule,
     CardsModule
   ],
   exports: [MyFormsComponent]

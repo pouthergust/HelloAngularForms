@@ -1,3 +1,14 @@
 <div class="c-forms bg-forms">
-  <p>form-control works!</p>
+  <p>{{ forms }}</p>
+  <label for="form-control">
+    <input
+      #value
+      class="c-input"
+      id="form-control"
+      name="form-control"
+      type="text"
+      FormControl="formControl"
+      placeholder="Digita ai parça"
+      (change)="alter($event.target)">
+  </label>
 </div>
