@@ -1,5 +1,5 @@
 <div class="c-forms bg-forms">
-  <form FormGroup="forms">
+  <form [formGroup]="forms" (ngSubmit)="showMe()">
     <p>reactive works!</p>
     <label for="form-control">
       <input
@@ -7,8 +7,20 @@
         type="text"
         name="form-control"
         id="form-control"
-        placeholder="Aqui ainda não ta funcionando..."
+        placeholder="nome"
         formControlName="nome">
     </label>
+    <br>
+    <label for="form-control">
+      <input
+        class="c-input"
+        type="text"
+        name="form-control"
+        id="form-control"
+        placeholder="sobrenome"
+        formControlName="sobrenome">
+    </label>
+    <br>
+    <button class="c-button" type="submit" (keyup.enter)="showMe()">Enviar</button>
   </form>
 </div>

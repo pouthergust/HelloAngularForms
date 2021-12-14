@@ -1,5 +1,5 @@
 <div class="c-forms bg-forms">
-  <p>{{ forms }}</p>
+  <p>{{ title }}</p>
   <label for="form-control">
     <input
       #value
@@ -9,6 +9,18 @@
       type="text"
       [formControl]="formControl"
       placeholder="Digita ai parça"
-      (keyup.enter)="alter($event.target)">
+      (keyup.enter)="alter()">
+  </label>
+  <br>
+  <label for="form-control">
+    <input
+      #value
+      readonly
+      class="c-input"
+      id="form-control"
+      name="form-control"
+      type="text"
+      [formControl]="result"
+      placeholder="Retorno">
   </label>
 </div>

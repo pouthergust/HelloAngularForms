@@ -3,3 +3,11 @@
 .u-title { @include title(); }
 .u-subTitle { @include sub-title(); }
 .u-text { @include text(); }
+.u-readonly { color: grey; }
+
+
+/* Estilos gerais */
+::selection {
+  background-color: var(--sec);
+  color: #fff;
+}

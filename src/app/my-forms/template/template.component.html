@@ -1,3 +1,20 @@
 <div class="c-forms bg-forms">
-  <p>template works!</p>
+  <form #formPerson>
+    <p> {{ title }} </p>
+    <input type="range">
+
+    <details>
+      <summary>framework favorito</summary>
+      <div *ngFor="let framework of frameworks">
+        <input type="radio" name="frameworks" id="{{framework}}">
+        <label for="{{framework}}">  {{framework}}
+        </label>
+      </div>
+    </details>
+
+    <select name="language" id="language">
+      <option value="-1">Linguagem favorita</option>
+      <option *ngFor="let language of languages" value="{{ language }}">{{ language }}</option>
+    </select>
+  </form>
 </div>

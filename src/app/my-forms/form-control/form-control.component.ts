@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
+import { throwError } from 'rxjs';
 import { LocalstorageService } from 'src/app/services/localstorage.service';
 
 @Component({
@@ -9,26 +10,33 @@ import { LocalstorageService } from 'src/app/services/localstorage.service';
 })
 export class FormControlComponent implements OnInit {
 
+  title = 'Its Working';
   forms: string | null = '';
-  formControl: FormControl = new FormControl('', {updateOn: 'change'});
-  @ViewChild('value') input!: HTMLInputElement;
+  formControl: FormControl = new FormControl('');
+  result: FormControl = new FormControl('');
 
   constructor(
     private storage: LocalstorageService
-  ) { }
+    ) { }
 
-  ngOnInit(): void {
-    if (!this.storage.read('formsTitle')) {
-      this.storage.create('formsTitle', 'Form-control Works!')
-    }
+    ngOnInit(): void {
+      if (!this.storage.read('formsTitle')) {
+        this.storage.create('formsTitle', 'Form-control Works!')
+      }
 
-    this.forms = this.storage.read('formsTitle');
-    console.log(this.forms, "\nThis.forms")
+    this.forms = this.storage.read('formsTitle') as string;
+    this.result.setValue(this.forms);
   }
 
-  alter(value: any) {
-    this.storage.create('formsTitle', value.value)
-    this.forms = this.storage.read('formsTitle');
+  // alter() {
+  alter(): void {
+    this.storage.create('formsTitle', this.formControl.value);
+    this.forms = this.storage.read('formsTitle') as string;
+    this.setForms();
+  }
+
+  setForms(): void {
+    this.result.reset(this.forms);
     this.formControl.reset('');
   }
 }
