@@ -7,8 +7,8 @@
       id="form-control"
       name="form-control"
       type="text"
-      FormControl="formControl"
+      [formControl]="formControl"
       placeholder="Digita ai parça"
-      (change)="alter($event.target)">
+      (keyup.enter)="alter($event.target)">
   </label>
 </div>

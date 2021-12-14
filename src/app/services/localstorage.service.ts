@@ -12,7 +12,6 @@ export class LocalstorageService {
   }
 
   read(key: string) {
-    console.log(localStorage.getItem(key))
     return localStorage.getItem(key);
   }
 }

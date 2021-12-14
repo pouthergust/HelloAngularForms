@@ -10,7 +10,7 @@ import { LocalstorageService } from 'src/app/services/localstorage.service';
 export class FormControlComponent implements OnInit {
 
   forms: string | null = '';
-  formControl = new FormControl({value: this.forms, updateOn: 'change'});
+  formControl: FormControl = new FormControl('', {updateOn: 'change'});
   @ViewChild('value') input!: HTMLInputElement;
 
   constructor(
@@ -18,18 +18,17 @@ export class FormControlComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.formControl.value)
-    if (this.storage.read('formsTitle') == null) {
+    if (!this.storage.read('formsTitle')) {
       this.storage.create('formsTitle', 'Form-control Works!')
     }
 
-    this.forms = localStorage.getItem('formsTitle');
-    console.log(this.forms)
+    this.forms = this.storage.read('formsTitle');
+    console.log(this.forms, "\nThis.forms")
   }
 
   alter(value: any) {
     this.storage.create('formsTitle', value.value)
-    this.forms = localStorage.getItem('formsTitle');
-    this.formControl.reset('limpo');
+    this.forms = this.storage.read('formsTitle');
+    this.formControl.reset('');
   }
 }
