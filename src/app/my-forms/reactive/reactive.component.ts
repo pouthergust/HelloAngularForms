@@ -23,15 +23,11 @@ export class ReactiveComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.storage.read('formsTitle');
-    this.storage.read('person');
   }
 
   showMe() {
     this.router.navigateByUrl('/my-forms/template');
     this.storage.create('hobbies', this.forms.value);
-    // this.forms.get('hobby1')?.value('');
-    // this.forms.get('hobby2')?.value('');
   }
 
 }

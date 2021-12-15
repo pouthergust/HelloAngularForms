@@ -40,8 +40,8 @@ export class FormControlComponent implements OnInit {
   }
 
   createUser(user: string): void {
-    let localUser = this.user.createUser(user)
-    this.storage.create('user', localUser);
+    /* let localUser = */ this.user.createUser(user)
+    // this.storage.create('user', localUser);
   }
 
   setForms(): void {

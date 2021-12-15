@@ -9,14 +9,17 @@ import { LocalstorageService } from '../localstorage/localstorage.service';
 })
 export class UserService {
 
+  user!: User;
+
   constructor(
     private http: HttpClient,
     private storage: LocalstorageService
   ) { }
 
   createUser(user: string) {
-    return this.http.get<User>(`https://api.github.com/users/${user}`).subscribe((res) => {
-      this.storage.create('user', res)
+    return this.http.get<User>(`https://api.github.com/users/${user}`).subscribe((res: User) => {
+      // this.storage.create('user', res)
+      this.user = res;
     })
   }
 }

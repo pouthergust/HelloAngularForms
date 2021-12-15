@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../interfaces/user';
 import { LocalstorageService } from '../services/localstorage/localstorage.service';
+import { UserService } from '../services/user/user.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -32,14 +33,14 @@ export class UserProfileComponent implements OnInit {
 
 
   constructor(
-    private storage: LocalstorageService
+    private storage: LocalstorageService,
+    private info: UserService
   ) { }
 
   ngOnInit(): void {
     this.stack = this.storage.read('stack')
-    this.user = this.storage.read('user') as User;
-    console.log(this.user);
-    console.log(this.stack);
+    this.user = this.info.user;
+    // this.user = this.storage.read('user') as User;
   }
 
 }
