@@ -13,8 +13,9 @@
 @import 'components/c-formControl';
 @import 'components/c-reactive';
 @import 'components/c-template';
-@import 'components/c-button';
 @import 'components/c-input';
+@import 'components/c-button';
+@import 'components/c-select';
 @import 'components/c-forms';
 @import 'components/c-card';
 
@@ -24,6 +25,7 @@
 /* layout */
 @import 'layouts/l-main';
 @import 'layouts/l-myForm';
+@import 'layouts/l-profile';
 @import 'layouts/responsivity';
 
 /* ---------------------------------------------------- */

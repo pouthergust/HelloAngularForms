@@ -1,0 +1,25 @@
+<div class="l-profile c-forms">
+  <img width="250" class="u-circle" [src]="user.avatar_url" alt="user photo">
+  <h1 class="u-title">{{ user.name }}</h1>
+  <p class="u-readonly">{{ user.login }}</p>
+
+  <br>
+
+  <P>Minha stack favorita é</P>
+  <div class="stack">
+    <div class="front">
+      <img *ngIf="stack.framework === 'react'" width="50px" [src]="front.react" alt="react">
+      <img *ngIf="stack.framework === 'angular'" width="50px" [src]="front.angular" alt="angular">
+      <img *ngIf="stack.framework === 'vue'" width="50px" [src]="front.vue" alt="vue">
+      <img *ngIf="stack.framework === 'phoenix'" width="50px" [src]="front.phoenix" alt="Phoenix Framework">
+    </div>
+    <div class="back">
+      <img *ngIf="stack.language === 'Javascript'" width="50px" [src]="back.javascript" alt="Javascript">
+      <img *ngIf="stack.language === 'Typescript'" width="50px" [src]="back.typescript" alt="Typescript">
+      <img *ngIf="stack.language === 'Java'" width="50px" [src]="back.java" alt="Java">
+      <img *ngIf="stack.language === 'Elixir'" width="50px" [src]="back.elixir" alt="Elixir">
+    </div>
+  </div>
+
+  <button class="c-button" routerLink="/my-forms/template">Editar</button>
+</div>

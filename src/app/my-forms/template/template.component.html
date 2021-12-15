@@ -1,20 +1,31 @@
 <div class="c-forms bg-forms">
-  <form #formPerson>
+  <form #formTemplate="ngForm" (ngSubmit)="showMe(formTemplate)">
     <p> {{ title }} </p>
-    <input type="range">
 
-    <details>
-      <summary>framework favorito</summary>
-      <div *ngFor="let framework of frameworks">
-        <input type="radio" name="frameworks" id="{{framework}}">
-        <label for="{{framework}}">  {{framework}}
-        </label>
-      </div>
-    </details>
+    <br>
 
-    <select name="language" id="language">
-      <option value="-1">Linguagem favorita</option>
-      <option *ngFor="let language of languages" value="{{ language }}">{{ language }}</option>
+    <p>Meu framework Frontend favorito é: </p>
+    <div *ngFor="let framework of frameworks">
+      <label for="{{framework}}" class="container">
+      <input type="radio" id="{{framework}}" name="framework" value="{{ framework }}" ngModel> <span class="checkmark"> <i class="bullet"></i> </span>
+      {{framework}}
+      </label>
+    </div>
+
+    <br>
+
+    <p> Meu nivel de Habilidade é: <span class="u-sans">{{ skill }}</span></p>
+    <input type="range" max="10" name="maestry" [(ngModel)]="skill">
+    <br>
+    <br>
+
+    <p>Minha linguagem backend favorita é: </p>
+    <select class="c-select" name="language" id="language" ngModel="lang.value">
+      <option *ngFor="let language of languages" #lang value="{{ language }}">{{ language }}</option>
     </select>
+
+    <br>
+
+    <button class="c-button" type="submit">Enviar</button>
   </form>
 </div>

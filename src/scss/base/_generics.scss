@@ -4,6 +4,8 @@
 .u-subTitle { @include sub-title(); }
 .u-text { @include text(); }
 .u-readonly { color: grey; }
+.u-sans { font-family: 'arial', sans-serif; }
+.u-circle { clip-path: circle(); }
 
 
 /* Estilos gerais */

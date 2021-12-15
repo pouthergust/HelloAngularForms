@@ -1,20 +1,13 @@
 $componentName: 'button';
 
 .c-#{$componentName} {
+  @extend .c-input;
   background-color: var(--lg-pri);
-  border-radius: 3px;
   color: #fff;
   font-weight: bold;
-  outline-color: rgba($pri, 0.4);
-  padding: 10px;
   transition: all .2s;
 
   &:hover {
     filter: brightness(.9);
   }
-}
-
-.c-#{$componentName} {
-  margin-top: 10px;
-  width: 300px;
 }

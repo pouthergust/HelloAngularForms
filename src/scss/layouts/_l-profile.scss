@@ -1,0 +1,18 @@
+$layoutName: 'profile';
+
+app-user-profile {
+  display:flex;
+}
+
+.l-#{$layoutName} {
+  text-align: center;
+  align-self: center;
+
+  .stack {
+    @include flex();
+  }
+
+  .u-title {
+    color: #000;
+  }
+}

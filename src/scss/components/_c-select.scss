@@ -1,0 +1,9 @@
+$componentName: 'select';
+
+.c-#{$componentName} {
+  @extend .c-input;
+  border: none;
+  border-right: 10px solid var(--fundinho);
+}
+
+

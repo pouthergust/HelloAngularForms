@@ -8,20 +8,7 @@ import { TemplateComponent } from './template/template.component';
 
 const routes: Routes = [{
   path: '',
-  component: MyFormsComponent,
-  children: [{
-    path: '',
-    component: SelectFormComponent
-  },{
-    path: 'form-control',
-    component: FormControlComponent
-  },{
-    path: 'reativo',
-    component: ReactiveComponent
-  },{
-    path: 'template',
-    component: TemplateComponent
-  }]
+  component: MyFormsComponent
 }];
 
 @NgModule({

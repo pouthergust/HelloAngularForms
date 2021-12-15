@@ -1,14 +1,14 @@
 <div class="c-forms bg-forms">
   <form [formGroup]="forms" (ngSubmit)="showMe()">
-    <p>reactive works!</p>
+    <p>Cite 2 Hobbies</p>
     <label for="form-control">
       <input
         class="c-input"
         type="text"
         name="form-control"
         id="form-control"
-        placeholder="nome"
-        formControlName="nome">
+        placeholder="Hobby"
+        formControlName="hobby1">
     </label>
     <br>
     <label for="form-control">
@@ -17,8 +17,8 @@
         type="text"
         name="form-control"
         id="form-control"
-        placeholder="sobrenome"
-        formControlName="sobrenome">
+        placeholder="Hobby"
+        formControlName="hobby1">
     </label>
     <br>
     <button class="c-button" type="submit" (keyup.enter)="showMe()">Enviar</button>

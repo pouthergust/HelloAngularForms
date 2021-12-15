@@ -9,7 +9,7 @@ import { FormControlComponent } from './form-control/form-control.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveComponent } from './reactive/reactive.component';
 import { TemplateComponent } from './template/template.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -24,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     MyFormsRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     CardsModule
   ],
   exports: [MyFormsComponent]

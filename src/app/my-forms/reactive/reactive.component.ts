@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { LocalstorageService } from 'src/app/services/localstorage.service';
+import { FormBuilder, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LocalstorageService } from 'src/app/services/localstorage/localstorage.service';
+
 
 @Component({
   selector: 'app-reactive',
@@ -10,13 +12,14 @@ export class ReactiveComponent implements OnInit {
 
   // forms = new FormGroup({
   forms = this.formBuilder.group({
-    nome: new FormControl(''),
-    sobrenome: new FormControl('')
+    hobby1: new FormControl(''),
+    hobby2: new FormControl('')
   });
 
   constructor(
     private formBuilder: FormBuilder,
-    private storage: LocalstorageService
+    private storage: LocalstorageService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -25,7 +28,10 @@ export class ReactiveComponent implements OnInit {
   }
 
   showMe() {
-    this.storage.create('person', this.forms.value);
+    this.router.navigateByUrl('/my-forms/template');
+    this.storage.create('hobbies', this.forms.value);
+    // this.forms.get('hobby1')?.value('');
+    // this.forms.get('hobby2')?.value('');
   }
 
 }
