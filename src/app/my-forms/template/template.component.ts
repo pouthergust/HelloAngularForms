@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class TemplateComponent implements OnInit {
   title = 'template works!';
 
-  skill: number = 5;
+  skill: number = 0;
   frameworks: string[] = ['react', 'angular', 'vue', 'phoenix'];
   languages: string[] = ['Javascript', 'Typescript' ,'Java', 'Elixir'];
   newUser!: User;

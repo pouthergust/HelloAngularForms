@@ -7,7 +7,7 @@ import { SelectFormComponent } from './my-forms/select-form/select-form.componen
 import { TemplateComponent } from './my-forms/template/template.component';
 
 const routes: Routes = [{
-  path: '/',
+  path: '',
   pathMatch: 'full',
   redirectTo: 'my-forms'
 }, {

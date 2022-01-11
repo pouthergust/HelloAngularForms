@@ -17,9 +17,11 @@ export class UserService {
   ) { }
 
   createUser(user: string) {
-    return this.http.get<User>(`https://api.github.com/users/${user}`).subscribe((res: User) => {
-      // this.storage.create('user', res)
+    this.http.get<User>(`https://api.github.com/users/${user}`)
+    .subscribe((res: User) => {
+
       this.user = res;
+      console.log('Usuario: ',this.user)
     })
   }
 }

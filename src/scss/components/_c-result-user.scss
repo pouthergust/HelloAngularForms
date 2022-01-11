@@ -1,0 +1,25 @@
+$componentName: 'result';
+
+.c-#{$componentName} {
+  @extend .c-input;
+  @extend .u-readonly;
+  font-size: 13px;
+
+  &::after {
+    content: 'Retorno';
+   }
+}
+
+.--failed {
+  border: 2px solid $failed;
+  color: $failed;
+  &::after { content: 'Usuario não encontrado'; }
+ }
+
+.--success {
+  border: 2px solid $success;
+  color: $success;
+  &::after { content: 'Sucesso'; }
+ }
+
+

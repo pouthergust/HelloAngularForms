@@ -1,0 +1,18 @@
+$component: 'c-tags';
+
+.#{$component}-div {
+  margin-top: 10px;
+
+  .#{$component} {
+    display: inline-block;
+    background-color: var(--sec);
+    border-radius: 15px;
+    color: #fff;
+    padding: 2px 8px;
+    margin: 0 4px 4px;
+
+    &::selection {
+      background-color: transparent;
+    }
+  }
+}

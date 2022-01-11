@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/interfaces/user';
 import { LocalstorageService } from 'src/app/services/localstorage/localstorage.service';
 import { UserService } from 'src/app/services/user/user.service';
+import { catchError } from 'rxjs/operators';
+import { of, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-form-control',
@@ -11,41 +13,38 @@ import { UserService } from 'src/app/services/user/user.service';
 })
 export class FormControlComponent implements OnInit {
 
-  title = 'Usuario do Github';
+  title = 'Usuário do Github';
   forms: string | null = '';
   formControl: FormControl = new FormControl('');
-  result: FormControl = new FormControl('');
+  error$!: Subject<boolean>;
+  @ViewChild('result') result!: HTMLParagraphElement;
 
   constructor(
-    private storage: LocalstorageService,
     private user: UserService,
     private router: Router
     ) { }
 
     ngOnInit(): void {
-    // if (!this.storage.read('user')) {
-    //   this.storage.create('user', 'Form-control Works!')
-    // }
-
-    // this.forms = this.storage.read('user') as string;
-    // this.result.setValue(this.forms);
   }
 
   alter(): void {
-    // this.storage.create('user', this.formControl.value);
-    // this.forms = this.storage.read('user') as string;
     this.createUser(this.formControl.value);
     this.setForms();
-    this.router.navigateByUrl('/my-forms/reativo');
+    // if (!this.error$) {
+    //   this.result.className = '--failed'
+    //   this.router.navigateByUrl('/my-forms/reativo');
+    // } else {
+    //   this.result.className = '--success'
+    // }
   }
 
   createUser(user: string): void {
-    /* let localUser = */ this.user.createUser(user)
-    // this.storage.create('user', localUser);
+
+    this.user
+      .createUser(user)
   }
 
   setForms(): void {
-    this.result.reset('Bem Vindo(a)!!');
     this.formControl.reset('');
   }
 }

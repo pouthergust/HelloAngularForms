@@ -1,11 +1,15 @@
 $pri: #8005c3;
 $sec: #DDB0F7;
 $ter: #FCF6FF;
+$success: #0ac10a;
+$failed: #ed436c;
 
 :root {
   --pri: #{$pri};
   --sec: #{$sec};
   --ter: #{$ter};
+  --success: #{$success};
+  --failed: #{$failed};
   --bg: #fff;
   --bg-ter: #FCF6FF;
   --light: #fff;

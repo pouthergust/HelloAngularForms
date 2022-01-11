@@ -1,0 +1,16 @@
+$componentName: 'img';
+
+.c-#{$componentName} {
+
+  &.--profile {
+    @extend .u-circle;
+    width: 250px;
+  }
+
+  &.--stack {
+    border-radius: 6px;
+    width: 50px;
+  }
+
+}
+

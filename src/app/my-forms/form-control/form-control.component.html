@@ -12,15 +12,13 @@
       (keyup.enter)="alter()">
   </label>
   <br>
-  <label for="form-control">
-    <input
-      #value
+    <p
+      #result
       readonly
-      class="c-input"
-      id="form-control"
+      class="c-result"
+      id="result"
       name="form-control"
-      type="text"
-      [formControl]="result"
-      placeholder="Retorno">
-  </label>
+      type="text">
+    </p>
 </div>
+

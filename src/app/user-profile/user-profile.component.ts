@@ -8,13 +8,13 @@ import { UserService } from '../services/user/user.service';
   templateUrl: './user-profile.component.html'
 })
 export class UserProfileComponent implements OnInit {
-  title = 'Gabriel Henrique';
-  subtitle = 'Designer Grafico';
-  url = 'https://source.unsplash.com/random/250x250'
+  // url = 'https://source.unsplash.com/random/250x250'
+  hobbies: string[] = []
 
   user!: User;
 
   stack: any;
+  stackExists!: boolean;
 
   front = {
     angular: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png',
@@ -40,6 +40,12 @@ export class UserProfileComponent implements OnInit {
   ngOnInit(): void {
     this.stack = this.storage.read('stack')
     this.user = this.info.user;
+    this.hobbies = Object
+      .values(this.storage.read('hobbies') as string[])
+      .filter(hobby => hobby !== '')
+
+    this.stackExists = this.stack.language && this.stack.framework;
+    console.log(this.hobbies)
     // this.user = this.storage.read('user') as User;
   }
 
