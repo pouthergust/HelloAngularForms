@@ -30,6 +30,7 @@ export class FormControlComponent implements OnInit {
   alter(): void {
     this.createUser(this.formControl.value);
     this.setForms();
+    this.navigate();
     // if (!this.error$) {
     //   this.result.className = '--failed'
     //   this.router.navigateByUrl('/my-forms/reativo');
@@ -39,12 +40,14 @@ export class FormControlComponent implements OnInit {
   }
 
   createUser(user: string): void {
-
-    this.user
-      .createUser(user)
+    this.user.createUser(user)
   }
 
   setForms(): void {
     this.formControl.reset('');
+  }
+
+  navigate() {
+    this.router.navigateByUrl('/my-forms/reativo');
   }
 }

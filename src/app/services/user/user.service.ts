@@ -16,12 +16,13 @@ export class UserService {
     private storage: LocalstorageService
   ) { }
 
-  createUser(user: string) {
+  createUser(user: string): void {
     this.http.get<User>(`https://api.github.com/users/${user}`)
     .subscribe((res: User) => {
 
-      this.user = res;
-      console.log('Usuario: ',this.user)
+      // this.user = res;
+      this.storage.create('user', res)
+      console.log('Usuario: ', res)
     })
   }
 }

@@ -46,7 +46,7 @@ export class UserProfileComponent implements OnInit {
 
     this.stackExists = this.stack.language && this.stack.framework;
     console.log(this.hobbies)
-    // this.user = this.storage.read('user') as User;
+    this.user = this.storage.read('user') as User;
   }
 
 }
